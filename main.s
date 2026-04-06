@@ -5,6 +5,7 @@ extern ft_write
 
 section .data
     msg db "Karakory jiaby eeee", 10, 0
+    msg db "Karakory jiaby eees", 10, 0
 
 section .text
 _start:
@@ -15,6 +16,7 @@ _start:
     mov rsi, msg    ; txt
     mov rdx, rax    ; size
     call ft_write  
+    
     
 
     mov rdi, 0      ; exit status

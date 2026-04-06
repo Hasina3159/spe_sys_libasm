@@ -1,19 +1,23 @@
-global ft_strlen
+global ft_strcpy
 
-ft_strlen:
-    mov rax, 0;
+ft_strcpy:
+    mov rax, rdi;
     push rdi
+    push rsi
 
 main_loop:
-    mov cl, [rdi];
+    mov cl, [rsi];
+    mov [rdi], cl;
+
     cmp cl, 0;
     je return;
 
     inc rdi;
-    inc rax;
+    inc rsi;
     jmp main_loop;
 
 return:
+    pop rsi
     pop rdi
     ret;
 

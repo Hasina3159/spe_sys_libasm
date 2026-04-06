@@ -1,5 +1,5 @@
 NAME = libasm.a
-ASM_SRCS = ft_strlen.s ft_write.s
+ASM_SRCS = ft_strlen.s ft_write.s ft_read.s ft_strcpy.s ft_strcmp.s ft_strdup.s ft_atoi_base.s
 ASM_OBJS = $(ASM_SRCS:.s=.o)
 CC = gcc
 AS = nasm
@@ -22,4 +22,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+compile: $(NAME)
+	$(CC) $(CFLAGS) -o main main.c -L. -lasm
+
+.PHONY: all clean fclean re compile
